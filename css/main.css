@@ -114,18 +114,7 @@ button{
 	background:#078494;
 	width:60%;
 }
-.green-section .icongroup .icon{
-	display:inline-block;
-	width:80px;
-	height:80px;
-	background:#000;
-	transform:rotate(45deg);
-	margin:20px;
-	background-color:#0D6F7C;
-}
-.icongroup{
-	margin-top:16px;
-}
+
 .gray-section{
 	background:#252F34;
 }
@@ -192,8 +181,9 @@ button{
 .card{
 	float:left;
 	width:50%;
-	min-height:300px;
+	min-height:350px;
 	padding:50px;
+	max-height:350px;
 
 }
 .card p{
@@ -244,21 +234,11 @@ ul.share-gruop{
 }
 
 .main-wrapper{
-	background:#444 url(../img/banner.jpg);
+	background:#444 url(http://hex.wanmei.com/resources/jpg/160509/10511462766485525.jpg);
 	background-attachment:fixed;
 	background-repeat:no-repeat;
 	background-size:cover;
 	background-position:center center;
-}
-
-.icon div{
-	-webkit-transform:rotate(315deg);
-	-ms-transform:rotate(315deg);
-	-o-transform:rotate(315deg);
-	transform:rotate(315deg);
-	position: relative;
-    top: 26px;
-    left: 2px;
 }
 
 .share-gruop li:hover{
