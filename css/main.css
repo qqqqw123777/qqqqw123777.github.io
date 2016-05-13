@@ -3,6 +3,9 @@
 	box-sizing:border-box;
 	font-family:"微软雅黑";
 }
+#main-wrapper{
+			overflow:hidden;
+}
 nav{
 	height:50px;
 }
@@ -169,6 +172,7 @@ button{
 	background:#3F3965;
 	color:#FFF;
 	padding:80px;
+	text-align:center;
 }
 .purple-section .heading-wrapper{
 	text-align:center;
@@ -252,4 +256,10 @@ ul.share-gruop{
 
 nav li:hover{
 	border-bottom:5px solid #FFF;
+}
+
+#btn button{
+    margin-top: -10px;
+    padding: 10px 50px;
+    border: 1px solid #3F3965;
 }
