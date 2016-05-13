@@ -2,13 +2,29 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name=”viewport” content=”width=device-width, initial-scale=1″ />
 	<title>HEXhelper</title>
 	<link rel="stylesheet"  href="css/noemalize.css">
 	<link rel="stylesheet"  href="css/main.css">
 	<link rel="stylesheet"  href="css/font-awesome.min.css">
+	<style type="text/css">
+		#banner *{
+			transition:all 2s;
+			transform:translateX(150%);
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload = function(){
+			var banner = document.getElementById("banner");
+			var ban = banner.getElementsByTagName("*");
+			for(var i = 0, j = ban.length; i < j; i ++){
+				ban[i].style.transform = "translateX(0)";
+			}
+		}
+	</script>
 </head>
 <body>
-	<div class="main-wrapper">
+	<div class="main-wrapper" id="main-wrapper">
 		<header><!-- 页头 -->
 			<nav>
 				<div class="logo"><a href="#">HEXHelper</a></div>
@@ -110,10 +126,13 @@
 							<p>1、资源牌可以为你增加资源上限、魔能，有些资源牌还可以为英雄充能，增加英雄能量点。<br>2、在自己的回合只能使用一张牌资源牌。<br>3、使用资源牌时无法被对手响应。</p>
 						</div>
 					</div>
+
 				</div>
+				
 			</section>
 		</div>
 		<footer><!-- 页脚 -->
+			<a href="#" id="btn"><button>↑Top</button></a>
 			<ul class="share-gruop">
 				<li><i class="icon-phone"></i></li>
 				<li><i class="icon-twitter"></i></li>
