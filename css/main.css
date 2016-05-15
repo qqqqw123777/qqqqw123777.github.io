@@ -3,8 +3,8 @@
 	box-sizing:border-box;
 	font-family:"微软雅黑";
 }
-#main-wrapper{
-			overflow:hidden;
+body{
+	overflow:auto;
 }
 nav{
 	height:50px;
