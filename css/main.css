@@ -3,7 +3,7 @@
 	box-sizing:border-box;
 	font-family:"微软雅黑";
 }
-body{
+.main-wrapper{
 	overflow:auto;
 }
 nav{
