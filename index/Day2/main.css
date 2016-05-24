@@ -1,0 +1,109 @@
+*{
+	margin:0;padding:0;-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+}
+a{
+	text-decoration:none;
+	color:#67686E;
+}
+body{
+	background:#F4F4F4;
+	overflow:hidden;
+}
+.left{float:left;}.right{float:right;}.blod{font-weight:bold;}
+.main{
+	width:525px;
+	height:875px;
+	background:#FFFFFF;
+	margin:40px auto;
+	box-shadow:0 0 20px #DDD;
+	padding-bottom:75px;
+	overflow:hidden;
+}
+.content{
+	width:100%;
+	height:100%;
+}
+.top{
+	text-align:center;
+	width:400px;
+	height:230px;
+	margin-left:70px;
+	margin-top:75px;
+}
+.top a{
+	line-height:25px;
+	width:20px;
+	height:25px;
+}
+.top img{
+	width:144px;
+	height:144px;
+	border:5px solid #474850;
+	border-radius:50%;
+	margin-top:25px;
+	box-shadow:0 0 10px #CCC;
+}
+.top h2{
+	color:#5B5D67;
+	margin-top:30px;
+	padding-left:10px;
+	font-size:1.2em;
+	word-spacing:7px;
+}
+
+.middle{
+	width:400px;
+	height:330px;
+	text-align:center;
+	margin-left:70px;
+	font-size:20px;
+	color:#68686F;
+	padding-top:50px;
+}
+.middle .cut{
+	line-height:120px;
+	height:120px;
+	font-size:50px;
+}
+.middle .cut .number{
+	margin:0 50px;
+}
+.middle .cut .sign{
+	cursor:pointer;
+}
+.middle .cut p{
+	display:block;
+	overflow:hidden;
+	height:0;
+	position:relative;
+	top:-25px;
+	font-size:10px;
+	line-height:20px;
+	transition:all 0.5s;
+	color:#FFF;
+	background:#474850;
+}
+.close{
+	color:#A5A6AA;
+}
+.middle p{
+	margin-bottom:15px;
+}
+
+.button{
+	text-align:center;
+	line-height:90px;
+	display:block;
+	width:360px;
+	height:90px;
+	color:#FFF;
+	background:#474850;
+	margin-left:85px;
+	margin-top:55px;
+	transition:all 0.2s;
+}
+.button:hover{
+	box-shadow:5px 3px 30px #555;
+}
