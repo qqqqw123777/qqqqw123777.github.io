@@ -1,0 +1,221 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Talent Calculator - Hex TCG Browser &amp; Deckbuilder</title>
+    <meta name="description" content="Talent tree for Hex TCG.">
+    <meta name="keywords" content="Hex TCG talent skill trait combo racial">
+    <link href="css/layout.css" rel="stylesheet">
+
+</head>
+<body>
+<div class="ltIE9-hide">
+    <a class="link" id="logo" href="http://hex.tcgbrowser.com">
+        &larr; HEX TCGBrowser(本网站原版)
+    </a>
+    <div data-bind="css: { open: isOpen }" class="page">
+        <h1>
+            <a class="link" href="#">Hex天赋模拟器</a>
+        </h1>
+        <div id="comboSelection">
+            <div id="races">
+                <!--ko foreach: races-->
+                <label class="race-selector-container">
+                    <input class="race-selector" type="radio" name="races"
+                           data-bind="checked: $parent.selectedRace, value: name, disable: hasNoData"/>
+                    <img data-bind="attr:{src: imagePath},css : {selected: $parent.selectedRace() == name}">
+                    <span data-bind="text: name, css : {selected: $parent.selectedRace() == name}"></span>
+                </label>
+                <!--/ko-->
+            </div>
+            <div id="classes">
+                <!--ko foreach: classes-->
+                <label class="class-selector-container">
+                    <input class="class-selector" type="radio" name="classes"
+                           data-bind="checked: $parent.selectedClass, value: name, disable: hasNoData"/>
+                    <img data-bind="attr:{src: imagePath}, css : {selected: $parent.selectedClass() == name}">
+                    <span data-bind="text: name, css : {selected: $parent.selectedClass() == name}"></span>
+                </label>
+                <!--/ko-->
+            </div>
+        </div>
+        <div id="stats-container">
+            <div id="total-cost" class="cost">可用天赋点数:
+                <span data-bind="text: pointsLeft" class="value"></span>
+            </div>
+            <ul class="stats">
+                <li>种族特性</li>
+                <!--ko foreach: traitsList-->
+                <li><span data-bind="text: title, hoverToggle: 'hover'" class="title"></span>
+                    <div class="tool-tip">
+                        <h3 data-bind="text: title" class="skill-name"></h3>
+                        <div data-bind="html: description" class="skill-description"></div>
+                        <ul class="skill-links">
+                            <!--ko foreach: links-->
+                            <li>
+                                <a data-bind="attr: { href: url, 'data-name': label }, text: label" target="_blank"></a>
+                            </li>
+                            <!--/ko-->
+                        </ul>
+                        <hr data-bind="visible: extraDescription()">
+                        <div><span data-bind="text: extraDescription"></span></div>
+                        <ul class="stats">
+                            <!--ko foreach: stats-->
+                            <li><span class="value">+<span data-bind="text: value"></span></span> <span
+                                    data-bind="	text: title" class="title"></span></li>
+                            <!--/ko-->
+                        </ul>
+                        <div data-bind="text: helpMessage" class="help-message"></div>
+                    </div>
+                </li>
+                <!--/ko-->
+            </ul>
+            <ul class="stats">
+                <li>种族职业特性</li>
+                <!--ko foreach: combosList-->
+                <li><span data-bind="text: title, hoverToggle: 'hover'" class="title"></span>
+                    <div class="tool-tip">
+                        <h3 data-bind="text: title" class="skill-name"></h3>
+                        <div data-bind="html: description" class="skill-description"></div>
+                        <ul class="skill-links">
+                            <!--ko foreach: links-->
+                            <li>
+                                <a data-bind="attr: { href: url, 'data-name': label }, text: label" target="_blank"></a>
+                            </li>
+                            <!--/ko-->
+                        </ul>
+                        <hr data-bind="visible: extraDescription()">
+                        <div><span data-bind="text: extraDescription"></span></div>
+                        <ul class="stats">
+                            <!--ko foreach: stats-->
+                            <li><span class="value">+<span data-bind="text: value"></span></span> <span
+                                    data-bind="	text: title" class="title"></span></li>
+                            <!--/ko-->
+                        </ul>
+                        <div data-bind="text: helpMessage" class="help-message"></div>
+                    </div>
+                </li>
+                <!--/ko-->
+            </ul>
+            <ul class="stats">
+                <li>天赋</li>
+                <!--ko foreach: talentsList-->
+                <!--ko if: enabled-->
+                <li><span data-bind="text: title, hoverToggle: 'hover'" class="title"></span>
+                    <div class="tool-tip">
+                        <h3 data-bind="text: title" class="skill-name"></h3>
+                        <div data-bind="html: description" class="skill-description"></div>
+                        <ul class="skill-links">
+                            <!--ko foreach: links-->
+                            <li>
+                                <a data-bind="attr: { href: url, 'data-name': label }, text: label" target="_blank"></a>
+                            </li>
+                            <!--/ko-->
+                        </ul>
+                        <hr data-bind="visible: extraDescription()">
+                        <div><span data-bind="text: extraDescription"></span></div>
+                        <ul class="stats">
+                            <!--ko foreach: stats-->
+                            <li><span class="value">+<span data-bind="text: value"></span></span> <span
+                                    data-bind="	text: title" class="title"></span></li>
+                            <!--/ko-->
+                        </ul>
+                        <div data-bind="text: helpMessage" class="help-message"></div>
+                    </div>
+                </li>
+                <!--/ko-->
+                <!--/ko-->
+            </ul>
+
+            <button data-bind="click: reset" id="reset-talents">重置</button>
+        </div>
+        <div data-bind="visible: showSelectionText" id="help-text">选择一个种族和职业
+        <img src="img/red-arrow.png"></div>
+        <div class="talent-tree" id="talents">
+            <h2 id="race-traits">种族特性</h2>
+            <h2 id="race-combos">种族职业特性</h2>
+            <div class="avatar">
+                <!--<div class="portrait">-->
+                <!--<img data-bind="attr: { src: portraitURL }"></div>-->
+                <div class="details">
+                    <div data-bind="text: avatarName" class="h2"></div>
+                    <ul class="stats">
+                        <!--ko foreach: stats-->
+                        <li><span data-bind="text: title" class="title"></span>: <span data-bind="text: value"
+                                                                                       class="value"></span></li>
+                        <!--/ko-->
+                    </ul>
+                </div>
+            </div>
+            <div id="links-container">
+                <!--ko foreach: skills-->
+                <!--ko if: hasDependencies-->
+                <div data-bind="foreach: {data: dependencies, afterRender: getDir }, css: { 'can-be-enabled': canBeEnabled, 'is-enabled': isEnabled }, attr: { 'data-skill-id': id, position: position }"
+                     class="skill">
+                    <div data-bind="css: { active: isEnabled }, attr: { 'data-dependency-id': id }"
+                         class="skill-dependency"></div>
+                </div>
+                <!--/ko-->
+                <!--/ko-->
+            </div>
+            <!--ko foreach: skills-->
+            <div data-bind=" css: { 'can-be-enabled': canBeEnabled, 'is-enabled': isEnabled}, attr: { 'data-skill-id': id, position: position }"
+                 class="skill">
+                <div class="icon-container">
+                    <div class="icon" data-bind="style: {backgroundImage:  getIcon }"></div>
+                </div>
+                <div class="frame" data-bind="css: getType">
+                    <div class="tool-tip">
+                        <h3 data-bind="text: title" class="skill-name"></h3>
+                        <div data-bind="html: description" class="skill-description"></div>
+                        <ul class="skill-links">
+                            <!--ko foreach: links-->
+                            <li>
+                                <a data-bind="attr: { href: url, 'data-name': label }, text: label" target="_blank"></a>
+                            </li>
+                            <!--/ko-->
+                        </ul>
+                        <hr data-bind="visible: extraDescription()">
+                        <div><span data-bind="text: extraDescription"></span></div>
+                        <ul class="stats">
+                            <!--ko foreach: stats-->
+                            <li><span class="value">+<span data-bind="text: value"></span></span> <span
+                                    data-bind="	text: title" class="title"></span></li>
+                            <!--/ko-->
+                        </ul>
+                        <div data-bind="text: helpMessage" class="help-message"></div>
+                    </div>
+                    <!--<div class="skill-points">-->
+                        <!--<span data-bind="text: enabled" class="enabled" style="display: none;"></span>-->
+                        <!--<span data-bind="text: cost" class="cost"></span>-->
+                    <!--</div>-->
+                    <div data-bind="click: enableTalent, rightClick: disableTalent" class="hit-area"></div>
+                </div>
+            </div>
+            <!--/ko-->
+
+        </div>
+    </div>
+</div>
+
+<script src="lib/jquery.js"></script>
+<script src="lib/knockout.js"></script>
+<script src="lib/tooltip.js"></script>
+
+<script src="src/skilltree.js"></script>
+<script src="src/default.js"></script>
+
+<script>
+  // (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  // (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  // m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  // })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  // ga('create', 'UA-10510842-4', 'auto');
+  // ga('send', 'pageview');
+
+</script>
+</body>
+</html>

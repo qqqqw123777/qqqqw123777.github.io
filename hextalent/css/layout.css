@@ -1,0 +1,915 @@
+.ltIE9-show {
+    display: none;
+}
+
+.ltIE9 .ltIE9-show {
+    display: block;
+}
+
+.ltIE9 .ltIE9-hide {
+    display: none;
+}
+
+.ltIE9-warning {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.ltIE9-warning p {
+    margin-top: 0.5em;
+}
+
+html {
+    overflow-y: scroll;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    color: #ddd;
+    background: #000000 url(../img/bg.jpg) top center no-repeat;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    line-height: 1.5em;
+}
+
+header {
+    position: relative;
+    z-index: 20;
+}
+
+button {
+    border: 1px solid #FBF287;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 6px 11px #000000;
+    -moz-box-shadow: 0 6px 11px #000000;
+    box-shadow: 0 6px 11px #000000;
+    background: #debd4c;
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #c38f1f), color-stop(1, #faed7c));
+    background: -ms-linear-gradient(bottom, #c38f1f, #faed7c);
+    background: -o-linear-gradient(#faed7c, #c38f1f);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#faed7c', endColorstr='#c38f1f', GradientType=0);
+    font-weight: bold;
+    font-size: 1.5em;
+    line-height: 1em;
+    padding: 0.3em 0.75em;
+    cursor: pointer;
+    color: #510;
+}
+
+img {
+    border: 0 none;
+}
+
+#help-text img {
+    position: absolute;
+    top: -50px;
+    left: 425px;
+    -ms-transform: rotate(90deg); /* IE 9 */
+    -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+    transform: rotate(90deg) scale(1.4);
+}
+
+a {
+    color: #Fe9;
+}
+
+a#logo {
+    float: left;
+    margin-top: -10px;
+    /* margin-bottom: 15px; */
+    /* font-size: 0.5em; */
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #333;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2,
+h3,
+.h2,
+.h3 {
+    /* line-height: 1.25em; */
+    font-weight: normal;
+    margin: 0;
+}
+
+h2,
+.h2 {
+    font-size: 1.4em;
+}
+
+h3,
+.h3 {
+    font-size: 1.5em;
+    margin-bottom: 0.25em;
+}
+
+input.h2 {
+    display: block;
+    border: 1px solid black;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    padding: 0.125em 0.25em;
+    margin: -0.125em -0.25em;
+    background: transparent;
+    color: white;
+    max-width: 100%;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+ul.stats {
+    list-style: none;
+    margin: 10px 0px 10px 0px;
+    padding: 0;
+    /* font-size: 1.2em; */
+}
+
+#stats-container ul.stats {
+    width: 210px;
+    /* font-size: 1.1em; */
+    cursor: default;
+    /* position: relative; */
+}
+
+#stats-container ul.stats li {
+    position: relative;
+}
+
+#stats-container ul.stats > li:first-child {
+    font-size: 1.1em;
+    text-decoration: underline;
+}
+
+li {
+    margin: 0;
+    padding: 0;
+}
+
+ul.skill-links li {
+    list-style: none;
+}
+
+.hide {
+    display: none;
+}
+
+.page {
+    margin: 0 auto;
+    position: relative;
+    width: 950px;
+}
+
+.intro {
+    width: 600px;
+    margin: 0 auto;
+    position: absolute;
+    top: 350px;
+    left: 50%;
+    margin-left: -300px;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+}
+
+.intro img {
+    float: left;
+    cursor: pointer;
+}
+
+.intro .content {
+    float: right;
+    text-align: center;
+    width: 330px;
+    padding-top: 10px;
+}
+
+.intro button {
+    margin-top: 0.75em;
+}
+
+.page.animated .intro {
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+.page.open .intro {
+    opacity: 0;
+    top: 500px;
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -o-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);
+}
+
+.talent-tree {
+    width: 830px;
+    height: 510px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    /* position: absolute; */
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    -webkit-opacity: 0;
+    opacity: 0;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+    filter: alpha(opacity=0);
+    -webkit-transform: scale(0.1);
+    -moz-transform: scale(0);
+    -o-transform: scale(0);
+    -ms-transform: scale(0);
+    /* transform: translateX(-50em); */
+    /*z-index: 10;*/
+    /* top:100px; */
+    /* float: left; */
+    /* position: relative; */
+    margin-left: -153px;
+}
+
+.page.animated .talent-tree {
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s cubic-bezier(0.18, 0.89, 0.51, 1.27);
+}
+
+.page.open .talent-tree {
+    -moz-opacity: 1;
+    -khtml-opacity: 1;
+    -webkit-opacity: 1;
+    opacity: 1;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=100);
+    filter: alpha(opacity=100);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    -ms-transform: scale(1);
+    /* transform: translateX(0em); */
+}
+
+.skill {
+    width: 104px;
+    height: 104px;
+    position: absolute;
+}
+
+.skill .icon-container {
+    position: absolute;
+    background: black;
+    width: 60px;
+    height: 60px;
+    padding: 5px;
+    top: 17px;
+    left: 17px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    -webkit-box-shadow: 0 6px 11px #000000;
+    -moz-box-shadow: 0 6px 11px #000000;
+    box-shadow: 0 6px 11px #000000;
+    overflow: hidden;
+}
+
+.skill .icon {
+    width: 100%;
+    height: 100%;
+    -moz-opacity: 0.35;
+    -khtml-opacity: 0.35;
+    -webkit-opacity: 0.35;
+    opacity: 0.4;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=35);
+    filter: alpha(opacity=35);
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+    background-size: 60px;
+}
+
+.skill .frame:hover .tool-tip, .stats li:hover .tool-tip {
+    visibility: visible;
+    -moz-opacity: 1;
+    -khtml-opacity: 1;
+    -webkit-opacity: 1;
+    opacity: 1;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=100);
+    filter: alpha(opacity=100);
+    -webkit-transition: all 0.3s 0.3s ease-out;
+    -moz-transition: all 0.3s 0.3s ease-out;
+    -o-transition: all 0.3s 0.3s ease-out;
+    transition: all 0.3s 0.3s ease-out;
+}
+
+.skill .hit-area {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.skill .skill-dependency.active {
+    -moz-opacity: 1;
+    -khtml-opacity: 1;
+    -webkit-opacity: 1;
+    opacity: 1;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=100);
+    filter: alpha(opacity=100);
+}
+
+.skill.is-enabled .icon {
+    -moz-opacity: 1;
+    -khtml-opacity: 1;
+    -webkit-opacity: 1;
+    opacity: 1;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=100);
+    filter: alpha(opacity=100);
+}
+
+.skill.is-enabled .frame {
+    background-position: -160px top;
+}
+
+.skill .skill-points {
+    position: absolute;
+    z-index: 1;
+    bottom: 6px;
+    left: 31px;
+    color: white;
+    font-size: 11px;
+    line-height: 1em;
+    width: 19px;
+    text-align: center;
+}
+
+.tool-tip {
+    visibility: hidden;
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    -webkit-opacity: 0;
+    opacity: 0;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+    filter: alpha(opacity=0);
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    background: #000;
+    position: absolute;
+    z-index: 3;
+    top: 30px;
+    left: 80px;
+    width: 300px;
+    padding: 10px;
+    -webkit-box-shadow: 0 6px 11px #000000;
+    -moz-box-shadow: 0 6px 11px #000000;
+    box-shadow: 0 6px 11px #000000;
+    border: 1px solid #333;
+}
+
+.tool-tip ul.skill-links {
+    padding: 0;
+    margin: 13px 0;
+}
+
+.stats .tool-tip {
+    left: -340px;
+    top: 10px;
+}
+
+.skill .tool-tip .current-rank-description {
+    color: #FC3;
+}
+
+.skill .tool-tip .next-rank-description {
+    -moz-opacity: 0.35;
+    -khtml-opacity: 0.35;
+    -webkit-opacity: 0.35;
+    opacity: 0.35;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=35);
+    filter: alpha(opacity=35);
+    color: #FC3;
+}
+
+.skill .tool-tip .talent-summary {
+    color: #FC3;
+}
+
+.skill .tool-tip .help-message {
+    color: #c00;
+}
+
+.skill .skill-dependency {
+    position: absolute;
+    display: block;
+    bottom: 73px;
+    left: 50%;
+    -moz-opacity: 0.35;
+    -khtml-opacity: 0.35;
+    -webkit-opacity: 0.35;
+    opacity: 0.35;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=35);
+    filter: alpha(opacity=35);
+    pointer-events: none;
+    background: url(../img/connection.png) no-repeat top left;
+    /* -webkit-transition: all 0.3s ease-out; */
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    /* transition: all 0.3s ease-out; */
+}
+
+/**************************************************
+	DEPENDENCY LINES
+**************************************************/
+
+.skill-dependency[direction="up"]
+    /* ids can be removed*/
+    /* , .skill-dependency[data-dependency-id="211"], .skill-dependency[data-dependency-id="6"], .skill-dependency[data-dependency-id="9"], .skill-dependency[data-dependency-id="11"], .skill-dependency[data-dependency-id="13"] */
+{
+    margin-left: -14px;
+    width: 26px;
+    height: 70px;
+    background-position: 0px -30px;
+}
+
+.skill-dependency[direction="left"]
+{
+    width: 60px;
+    height: 26px;
+    background-position: -35px 0px;
+    top: 41px;
+    left: -30px;
+}
+
+.skill-dependency[direction="right"] {
+    width: 60px;
+    height: 26px;
+    background-position: -35px 0px;
+    top: 41px;
+    left: 75px;
+}
+
+/**************************************************
+	TOOLTIPS
+**************************************************/
+[data-skill-id="10"] .tool-tip,
+[data-skill-id="11"] .tool-tip,
+[data-skill-id="12"] .tool-tip,
+[data-skill-id="13"] .tool-tip,
+[data-skill-id="14"] .tool-tip,
+[data-skill-id="18"] .tool-tip,
+[data-skill-id="19"] .tool-tip {
+    /* left: -320px; */
+}
+
+/**************************************************
+	ICON POSITIONS
+**************************************************/
+
+.skill[position$="1"]{
+    left: 128px;
+}
+
+.skill[position$="2"] {
+    left: 232px;
+}
+
+.skill[position$="3"] {
+    left: 336px;
+}
+
+.skill[position$="4"] {
+    left: 440px;
+}
+
+.skill[position$="5"] {
+    left: 544px;
+}
+
+.skill[position$="6"] {
+    left: 648px;
+}
+
+.skill[position$="7"] {
+    left: 752px;
+}
+
+.skill[position^="0"]{
+    top: 30px;
+}
+
+.skill[position^="1"]{
+    top: 160px;
+}
+
+.skill[position^="2"]{
+    top: 275px;
+}
+
+.avatar {
+    position: relative;
+    width: 195px;
+    top: 28px;
+    left: 446px;
+    /* margin-left: 430px; */
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -o-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    -webkit-opacity: 0;
+    opacity: 0;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+    filter: alpha(opacity=0);
+}
+
+.page.animated .avatar {
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+.page.open .avatar {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    -moz-opacity: 1;
+    -khtml-opacity: 1;
+    -webkit-opacity: 1;
+    opacity: 1;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=100);
+    filter: alpha(opacity=100);
+}
+
+.avatar .portrait {
+    background: url(../img/avatar-frame.png) top left no-repeat;
+    position: absolute;
+    top: 15px;
+    width: 140px;
+    height: 140px;
+    pointer-events: none;
+}
+
+.avatar .portrait img {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 10px 16px 16px 16px;
+    width: 108px;
+    height: 108px;
+}
+
+.avatar .portrait-controls {
+    position: absolute;
+    top: 135px;
+    width: 140px;
+    text-align: center;
+    -moz-opacity: 0.35;
+    -khtml-opacity: 0.35;
+    -webkit-opacity: 0.35;
+    opacity: 0.35;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=35);
+    filter: alpha(opacity=35);
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+.avatar .portrait-controls button {
+    padding: 0 12px 3px;
+    border-radius: 0 0 5px 5px;
+    background-clip: padding-box;
+    margin: 3px 1px;
+}
+
+.avatar:hover .portrait-controls {
+    -moz-opacity: 1;
+    -khtml-opacity: 1;
+    -webkit-opacity: 1;
+    opacity: 1;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=100);
+    filter: alpha(opacity=100);
+}
+
+.avatar:hover input.h2 {
+    border: 1px solid #444;
+    outline-width: 0;
+    background: #111;
+}
+
+.avatar .details {
+    padding: 10px 10px 10px 15px;
+    /* margin-left: 120px; */
+    border: 1px solid #fc6;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background: black;
+    -webkit-box-shadow: 0 6px 11px #000000;
+    -moz-box-shadow: 0 6px 11px #000000;
+    box-shadow: 0 6px 11px #000000;
+    /* min-height: 115px; */
+}
+
+.avatar .details .talent-summary {
+    color: #FC3;
+}
+
+#comboSelection {
+    height: 260px;
+    text-align: center;
+    margin-bottom: 24px;
+    border-bottom: 1px solid;
+    /* margin-top: 15px; */
+}
+
+#help-text {
+    /* margin: auto; */
+    text-align: center;
+    font-size: 35px;
+    margin-top: 100px;
+    /* border: 2px solid; */
+    padding: 14px;
+    font-family: 'Montserrat', sans-serif;
+    position: relative;
+}
+
+/*
+ CLASS & RACE ICONS
+*/
+#races, #classes {
+    float: left;
+    width: 100%;
+    margin-left: 65px;
+}
+
+div#classes {
+    margin-left: 260px;
+    width: auto;
+}
+
+#race-traits {
+    float: left;
+    margin-left: 230px;
+}
+
+#race-combos {
+    float: left;
+    margin-left: 345px;
+}
+
+label.class-selector-container, label.race-selector-container {
+    display: block;
+    float: left;
+    margin: 10px 40px 0 0;
+    cursor: pointer;
+}
+
+label.race-selector-container {
+    margin: 10px 10px;
+}
+
+label > input.class-selector, label > input.race-selector { /* HIDE RADIO */
+    visibility: hidden; /* Makes input not-clickable */
+    position: absolute; /* Remove input from document flow */
+}
+
+label > input.class-selector + img, label > input.race-selector + img { /* IMAGE STYLES */
+    opacity: 0.6;
+}
+
+label.class-selector-container span, label.race-selector-container span { /* IMAGE STYLES */
+    font-size: 20px;
+    display: block;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#stats-container {
+    float: right;
+    height: 500px;
+    display: none;
+}
+
+.page.open #stats-container {
+    display: block;
+}
+
+#total-cost {
+    font-size: 1.2em;
+}
+
+span.selected, img.selected {
+    color: #E4B533;
+    opacity: 1 !important;
+}
+
+.link {
+    color: inherit;
+    text-decoration: none;
+}
+
+.link-selected {
+    font-weight: bold !important;
+    color: #E8BE17 !important;
+}
+
+#reset-talents {
+    margin-top: 15px;
+}
+
+/*
+frames
+*/
+.skill .frame {
+    background: url(../img/frames-sprite.png) no-repeat;
+    position: absolute;
+}
+
+/*disabled*/
+.frame.Frame_1pt {
+    background-position: 0 -105px;
+    width: 104px;
+    height: 104px;
+}
+
+.skill.can-be-enabled .Frame_1pt {
+    background-position: 0 0;
+    width: 104px;
+    height: 104px;
+}
+
+.skill.is-enabled .Frame_1pt {
+    background-position: 0 -210px;
+    width: 104px;
+    height: 104px;
+}
+
+.frame.Frame_2pt {
+    background-position: -105px -105px;
+    width: 104px;
+    height: 104px;
+}
+
+.skill.can-be-enabled .Frame_2pt {
+    background-position: -105px 0;
+    width: 104px;
+    height: 104px;
+}
+
+.skill.is-enabled .Frame_2pt {
+    background-position: -105px -210px;
+    width: 104px;
+    height: 104px;
+}
+
+.frame.Frame_3pt {
+    background-position: -210px -105px;
+    width: 104px;
+    height: 104px;
+}
+
+.skill.can-be-enabled .Frame_3pt {
+    background-position: -210px 0;
+    width: 104px;
+    height: 104px;
+}
+
+.skill.is-enabled .Frame_3pt {
+    background-position: -210px -210px;
+    width: 104px;
+    height: 104px;
+}
+
+.skill.can-be-enabled .Frame_ChargePower {
+    background-position: -315px 0;
+    width: 104px;
+    height: 104px;
+}
+
+.Frame_ChargePower {
+    background-position: -315px -105px;
+    width: 104px;
+    height: 104px;
+}
+
+.skill.is-enabled .Frame_ChargePower {
+    background-position: -315px -210px;
+    width: 104px;
+    height: 104px;
+}
+
+.skill.can-be-enabled .Frame_Free {
+    background-position: -420px 0;
+    width: 104px;
+    height: 104px;
+}
+
+.Frame_Free {
+    background-position: -420px -105px;
+    width: 104px;
+    height: 104px;
+}
+
+.skill.is-enabled .Frame_Free {
+    background-position: -420px -210px;
+    width: 104px;
+    height: 104px;
+}
+
+.skill.can-be-enabled .Frame_RaceCombo {
+    background-position: -525px 0;
+    width: 104px;
+    height: 104px;
+}
+
+.Frame_RaceCombo {
+    background-position: -525px -105px;
+    width: 104px;
+    height: 104px;
+}
+
+.skill.is-enabled .Frame_RaceCombo {
+    background-position: -525px -210px;
+    width: 104px;
+    height: 104px;
+}
+
+.skill.can-be-enabled .Frame_RaceTalent {
+    background-position: -630px 0;
+    width: 104px;
+    height: 104px;
+}
+
+.Frame_RaceTalent {
+    background-position: -630px -105px;
+    width: 104px;
+    height: 104px;
+}
+
+.skill.is-enabled .Frame_RaceTalent {
+    background-position: -630px -210px;
+    width: 104px;
+    height: 104px;
+}
+
+.Frame_Locked {
+    background-position: 0 -315px;
+    width: 104px;
+    height: 104px;
+}
+
+/*.grow { transition: all .2s ease-in-out; }*/
+.grow { transform: scale(1.2);
+    transition: all .2s ease-in-out;
+}
+
+/*
+#treasure-hunt{
+    !*visibility: hidden;*!
+    !* display: none; *!
+    position: absolute;
+    left: 0;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    text-align:center;
+    z-index: 1000;
+    margin: auto;
+}
+
+#treasure-hunt div{
+    width:300px;
+    margin: 100px auto;
+    background-color: #fff;
+    border:1px solid #000;
+    padding:15px;
+    text-align:center;
+    background-image:url('../img/treasure_chest.png');
+}
+*/
