@@ -670,7 +670,7 @@
                     return (learnTemplate || 'Learn {n} to unlock.').replace('{n}', prettyJoin(s));
                 }
                 if((self.calculator.pointsLeft()  - self.cost()) < 0 && !self.enabled()){
-                    return ("Can't learn this. Not enough talent points.")
+                    return ("不能开启天赋. 没有足够的天赋点数.")
                 }
                 return '';
             });
