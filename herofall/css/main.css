@@ -1,6 +1,5 @@
 body{
-	background: url(../img/1.jpg) no-repeat fixed;
-	background-size: cover;
+	background: #fff
 }
 ul{
 	border-bottom: 1px solid #337ab7;
@@ -23,6 +22,6 @@ ul{
 }
 
 .card p{
-	color: #aaa;
+	color: #000;
 	font-size: 15px;
 }
