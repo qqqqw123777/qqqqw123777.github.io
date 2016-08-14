@@ -3,7 +3,7 @@ var card = $(".card");
 var top = li.length;
 var cards = 4;
 
-(function(){
+$(function(){	
 	if(window.innerWidth > 1551){
 		cards = 4;
 	}else if(window.innerWidth < 1551 && window.innerWidth > 1115){
@@ -17,7 +17,8 @@ var cards = 4;
   var w = Math.floor(window.innerWidth / cards) - 10;
   $("li").css("width", s + "px");
   $(".card").css("width", w + "px");
-})
+});
+
 
 window.onresize = function(){
 	if(window.innerWidth > 1551){
